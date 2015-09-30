@@ -21,18 +21,11 @@ public class Calculadora {
             System.out.println("5) Mayor de 2 números");
             System.out.println("6) Salir");
             do{
+                System.out.print("Opción ingresada: ");            
                 try {
-                System.out.print("Opción ingresada: ");           
-                option = rengar.nextInt();
+                    option = rengar.nextInt();
                 }catch(InputMismatchException e){
-                    System.out.println("ERROR: No ingresó el número de la opción");
-                    System.out.println("Quiere continuar?");
-                    System.out.println("1) SI");
-                    System.out.println("2) NO");
-                    optionB = rengar.nextInt();
-                    if(optionB == 2){
-                        option = 6;
-                    }
+                    System.out.println("ERROR: Caracter no válido");
                 }
             }while(option<1 || option>6);            
             switch(option){
