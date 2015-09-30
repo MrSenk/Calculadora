@@ -9,7 +9,7 @@ public class Calculadora {
 
     public static void main(String[] args) {
         Scanner rengar = new Scanner(System.in);
-        int option;
+        int option,optionB;
         double num1,num2;
         do{
             System.out.println("Calculadora: (Seleccione una opcion)");
@@ -76,10 +76,23 @@ public class Calculadora {
                     }
                     break;
                 case 6: 
-                    System.out.println("Hasta luego.");
+                    System.out.println("Salir ?");
+                    System.out.println("1) SI");
+                    System.out.println("2) NO");
+                    System.out.print("Opción ingresada: ");
+                    optionB = rengar.nextInt();
+                    while(optionB<1 || optionB>2){
+                        System.out.print("ERROR: Ingrese una opción válida: ");
+                        optionB = rengar.nextInt();
+                    }
+                    if(optionB==1){
+                        option = 6;
+                    }else{
+                        option = 0;
+                    }
                     break;
             }
-        }while(option<5);
+        }while(option<6);
     }
     
 }
