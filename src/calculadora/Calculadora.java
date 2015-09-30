@@ -1,6 +1,6 @@
 package calculadora;
 import java.util.Scanner;
-
+import java.util.InputMismatchException;
 /**
  *
  * @author Camilo
@@ -9,7 +9,8 @@ public class Calculadora {
 
     public static void main(String[] args) {
         Scanner rengar = new Scanner(System.in);
-        int option,optionB;
+        int option = 0;
+        int optionB;
         double num1,num2;
         do{
             System.out.println("Calculadora: (Seleccione una opcion)");
@@ -19,12 +20,21 @@ public class Calculadora {
             System.out.println("4) Dividir 2 números");
             System.out.println("5) Mayor de 2 números");
             System.out.println("6) Salir");
-            System.out.print("Opción ingresada: ");
-            option = rengar.nextInt();
-            while(option<1 || option>6){
-                System.out.print("ERROR: Ingrese una opción válida: ");
+            do{
+                try {
+                System.out.print("Opción ingresada: ");           
                 option = rengar.nextInt();
-            }
+                }catch(InputMismatchException e){
+                    System.out.println("ERROR: No ingresó el número de la opción");
+                    System.out.println("Quiere continuar?");
+                    System.out.println("1) SI");
+                    System.out.println("2) NO");
+                    optionB = rengar.nextInt();
+                    if(optionB == 2){
+                        option = 6;
+                    }
+                }
+            }while(option<1 || option>6);            
             switch(option){
                 case 1: 
                     System.out.println("1. SUMA DE 2 NÚMEROS");
