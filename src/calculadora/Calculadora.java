@@ -17,10 +17,11 @@ public class Calculadora {
             System.out.println("2) Restar 2 números");
             System.out.println("3) Multiplicar 2 números");
             System.out.println("4) Dividir 2 números");
-            System.out.println("5) Salir");
+            System.out.println("5) Mayor de 2 números");
+            System.out.println("6) Salir");
             System.out.print("Opción ingresada: ");
             option = rengar.nextInt();
-            while(option<1 || option>5){
+            while(option<1 || option>6){
                 System.out.print("ERROR: Ingrese una opción válida: ");
                 option = rengar.nextInt();
             }
@@ -61,8 +62,22 @@ public class Calculadora {
                     System.out.println("Resultado:");
                     System.out.println(num1+" / "+num2+" = "+(num1/num2));
                     break;
-                case 5: 
+                case 5:
+                    System.out.println("5. MAYOR DE 2 NÚMEROS");
+                    System.out.print("Ingrese primer número: ");
+                    num1 = rengar.nextDouble();
+                    System.out.print("Ingrese segundo número: ");
+                    num2 = rengar.nextDouble();
+                    System.out.println("Resultado:");
+                    if(num1>num2){
+                        System.out.println("El mayor es: "+num1);
+                    }else{
+                        System.out.println("El mayor es: "+num2);
+                    }
+                    break;
+                case 6: 
                     System.out.println("Hasta luego.");
+                    break;
             }
         }while(option<5);
     }
