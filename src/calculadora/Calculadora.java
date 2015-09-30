@@ -55,10 +55,14 @@ public class Calculadora {
                     break;
                 case 4: 
                     System.out.println("4. DIVISIÓN DE 2 NÚMEROS");
-                    System.out.print("Ingrese primer número: ");
+                    System.out.print("Ingrese numerador: ");
                     num1 = rengar.nextDouble();
-                    System.out.print("Ingrese segundo número: ");
+                    System.out.print("Ingrese denominador: ");
                     num2 = rengar.nextDouble();
+                    while(num2==0){
+                        System.out.print("ERROR: Ingrese un divisor distinto de 0: ");         
+                        num2 = rengar.nextDouble();
+                    }
                     System.out.println("Resultado:");
                     System.out.println(num1+" / "+num2+" = "+(num1/num2));
                     break;
