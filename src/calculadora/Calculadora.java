@@ -20,14 +20,13 @@ public class Calculadora {
             System.out.println("4) Dividir 2 números");
             System.out.println("5) Mayor de 2 números");
             System.out.println("6) Salir");
-            do{
-                System.out.print("Opción ingresada: ");            
-                try {
-                    option = rengar.nextInt();
-                }catch(InputMismatchException e){
-                    System.out.println("ERROR: Caracter no válido");
-                }
-            }while(option<1 || option>6);            
+            System.out.print("Opción ingresada: ");            
+            try {
+                option = rengar.nextInt();
+            }catch(InputMismatchException e){
+                System.out.println("ERROR: Caracter no válido");
+                option = 0;
+            }          
             switch(option){
                 case 1: 
                     System.out.println("1. SUMA DE 2 NÚMEROS");
